@@ -1,0 +1,14 @@
+<h1>Quote Editor</h1>
+
+<div id="quotes">
+  <%= turbo_frame_tag "quote_form" do %>
+    <%= form_with url: "/quotes", method: :post, data: { turbo_frame: "quotes" } do %>
+      <%= text_field_tag :quote, '', placeholder: "Enter your quote" %>
+      <%= submit_tag "Submit" %>
+    <% end %>
+  <% end %>
+
+  <div id="quote-list">
+    <!-- Quote list will be rendered here -->
+  </div>
+</div>
